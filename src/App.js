@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./landingPages.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Route, Routes, Link } from "react-router-dom";
+import LandingPages from "./pages/landingPages";
+import Profile from "./pages/profile";
+import DetailProduct from "./pages/DetailProduct";
+import AddProduct from "./pages/AddProduct";
+import AddTopping from "./pages/AddTopping";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<LandingPages />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/product/:id" element={<DetailProduct />} />
+      <Route path="/addProduct" element={<AddProduct />} />
+      <Route path="/addTopping" element={<AddTopping />} />
+      <Route path="/admin" element={<Admin />} />
+    </Routes>
   );
 }
 
